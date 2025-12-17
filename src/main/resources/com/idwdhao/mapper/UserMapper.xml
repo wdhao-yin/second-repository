@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--上方是写sql的xml映射文件的约束，下方是三个一致，mapper标签的命名空间（namespace）是对应接口的映射的引用路径-->
+<!--下方是select标签用来查询，id是对应接口下的抽象方法的方法名字，resultType标签则是返回值类型的引用路径,select标签内的内容是sql语句-->
+<!--一般复杂的sql语句用sql的映射文件xml的方式来写，而简单的sql语句可以用注解的方式来写-->
+<mapper namespace="com.idwdhao.mapper.UserMapper">
+    <update id="Update2">
+        UPDATE jdbc_user
+        <set>
+            <if test="name!=null">
+                name=#{name},
+            </if>
+            <if test="balance!=null">
+                balance=#{balance}
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+    <select id="Findfi" resultType="com.idwdhao.pojo.User">
+        select * from jdbc_user
+        <where>
+            <if test="name != null">
+                name like concat('%',#{name},'%')
+            </if>
+            <if test="balance != null">
+                and balance>#{balance}
+            </if>
+        </where>
+
+    </select>
+
+</mapper>

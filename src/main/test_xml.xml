@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Students>
+    <Student id="1">
+        <name>zhangsan</name>
+        <gender>M</gender>
+        <phoneid>1234568789</phoneid>
+    </Student>
+
+    <Student id="2">
+        <name>lisi</name>
+        <gender>W</gender>
+        <phoneid>1324521646</phoneid>
+    </Student>
+
+    <Student id="3">
+        <name>wangwu</name>
+        <gender>M</gender>
+        <phoneid>19998345154</phoneid>
+    </Student>
+</Students>
