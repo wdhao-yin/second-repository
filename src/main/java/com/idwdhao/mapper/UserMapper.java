@@ -8,6 +8,7 @@ import java.util.List;
 
 @Mapper //这个注解的作用是在运行时自动生成对应的接口实现类对象（代理对象），并将对象交给IOC容器管理
 public interface UserMapper {
+
     //在接口中写对应的方法
     //使用注解（这个注解是Mybaits提供的），直接写sql语句，无需在意jdbc的底层实现
     //查询
@@ -55,4 +56,10 @@ public interface UserMapper {
 //    @Update("update jdbc_user set name=#{name},balance=#{balance} where id=#{id}")
     public int Update2(User user);
 
+
+    @Select("select * from jdbc_user")
+    public List<User> getUsers();
+
+    @Delete("delete from jdbc_user where id=#{id}")
+    void deleteUsers(Integer id);
 }

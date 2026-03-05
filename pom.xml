@@ -56,6 +56,21 @@
             <version>1.2.0</version>
         </dependency>
 
+        <!--lombok工具依赖 -->
+        <!--引入这个依赖后，可以使用注解来让一些实体类的get，set方法自动生成-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- SpringBoot AOP 起步依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+
     </dependencies>
 
     <build>

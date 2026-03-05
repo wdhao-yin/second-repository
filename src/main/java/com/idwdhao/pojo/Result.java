@@ -64,15 +64,15 @@ public class Result {
     }
 
     public static Result success(Object data){
-        return new Result(1, "success", data);
+        return new Result(200, "success", data);
     }
 
     public static Result success(){
-        return new Result(1, "success", null);
+        return new Result(200, "success", null);
     }
 
     public static Result success(String msg){
-        return new Result(1,  msg, null);
+        return new Result(200,  msg, null);
     }
 
     @Override
